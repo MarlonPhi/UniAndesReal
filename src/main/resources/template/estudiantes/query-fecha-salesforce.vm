@@ -1,0 +1,5 @@
+UPDATE UA_ASPIRANTES 
+SET FECHA_PROCESADO_BUS = TO_DATE('$!exchange.properties.fechaFuse', 'YYYY-MM-DD HH24:MI:SS')
+WHERE ID_FORMULARIO = $!exchange.properties.idFormulario 
+AND PERIODO = $!exchange.properties.periodo 
+AND SECUENCIA_FORMULARIO = $!exchange.properties.secuenciaFormulario

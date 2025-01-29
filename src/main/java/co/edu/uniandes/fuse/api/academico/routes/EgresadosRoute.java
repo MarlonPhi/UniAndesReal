@@ -8,7 +8,7 @@ import co.edu.uniandes.fuse.api.academico.models.egresado.Titulos;
 import co.edu.uniandes.fuse.core.utils.models.ErrorResponse;
 
 /**
- * Definición de componentes rest/swagger y definición de rutas para el recurso sedes
+ * Definiciï¿½n de componentes rest/swagger y definiciï¿½n de rutas para el recurso sedes
  * 
  * @author CedEx Desarrollo de Software - DSIT - Universidad de los Andes
  * @since 2020-03-25
@@ -51,7 +51,6 @@ public class EgresadosRoute extends RestConfiguration {
 				.setHeader("CamelSqlQuery").simple("${body}")
 				.to("direct:bannerSQL")
 				.bean(EgresadoService.class, "getTitulosEgresado")
-		        .wireTap("mock:outputGetTitulosEgresado")
 			;			
 			
 	}

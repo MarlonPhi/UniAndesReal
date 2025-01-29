@@ -1,0 +1,4 @@
+Select spriden_id 
+from spriden 
+where spriden_pidm = '$!exchange.properties.PIDM' 
+and spriden_change_ind is null OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY

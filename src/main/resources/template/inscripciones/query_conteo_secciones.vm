@@ -1,0 +1,8 @@
+SELECT COUNT(sfrstcr_crn) CONTEO_MATERIAS
+	FROM SFRSTCR
+	WHERE SFRSTCR_RSTS_CODE IN ($!exchange.properties.tipoInscripcion)
+	  #if($!exchange.properties.periodo && $!exchange.properties.periodo != '')
+		AND   SFRSTCR_TERM_CODE = '$!exchange.properties.periodo' 
+	  #end
+	    AND   sfrstcr_pidm = '$!exchange.properties.PIDM' 
+	    AND   sfrstcr_levl_code = '$!exchange.properties.nivel' 

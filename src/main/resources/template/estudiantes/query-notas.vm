@@ -1,0 +1,46 @@
+SELECT DISTINCT
+	   ssbsect_term_code periodo
+	  ,gb_common.f_get_id (sfrstcr_pidm) codigo
+	  ,ssbsect_subj_code materia
+	  ,ssbsect_crse_numb nro_curso
+	  ,ssbsect_seq_numb seccion
+	  ,ssbsect_crn nrc
+	  ,gen_commons.f_get_nombre_curso (ssbsect_crn, ssbsect_term_code) nombre_curso
+	  ,ssrmeet_room_code salon
+	  ,ssrmeet_start_date fecha_inicio
+	  ,ssrmeet_end_date fecha_termina
+	  ,SUBSTR (ssrmeet_begin_time, 1, 2) || DECODE (ssrmeet_begin_time, NULL, NULL, ':') || SUBSTR (ssrmeet_begin_time, 3, 2) hora_inicio
+	  ,SUBSTR (ssrmeet_end_time, 1, 2) || DECODE (ssrmeet_end_time, NULL, NULL, ':') || SUBSTR (ssrmeet_end_time, 3, 2) hora_fin
+	  --,t_profe.nom_prof profesor
+ 	  ,DECODE (ssrmeet_mon_day, 'M', 'L') lunes
+	  ,DECODE (ssrmeet_tue_day, 'T', 'M') martes
+	  ,DECODE (ssrmeet_wed_day, 'W', 'I') miercoles
+	  ,DECODE (ssrmeet_thu_day, 'R', 'J') jueves
+	  ,DECODE (ssrmeet_fri_day, 'F', 'V') viernes
+	  ,DECODE (ssrmeet_sat_day, 'S', 'S') sabado
+	  ,DECODE (ssrmeet_sun_day, 'U', 'D') domingo
+FROM ssbsect
+	,ssrmeet
+	,sfrstcr
+	/*,(SELECT sirasgn_crn crn
+			 ,guwkcmns.fw_get_dssn (spriden_pidm, 'I') doc_ident
+			 ,RTRIM (spriden_last_name || ' ' || spriden_first_name || ' ' ||
+					 spriden_mi) nom_prof
+			 ,gobtpac_ldap_user login_prof
+			 ,sirasgn_term_code
+	   FROM spriden, sirasgn, gobtpac
+	   WHERE spriden_change_ind IS NULL
+	   AND	 spriden_pidm = sirasgn_pidm
+	   AND	 spriden_pidm = gobtpac_pidm(+)
+	   AND	 sirasgn_primary_ind = 'Y') t_profe */
+WHERE ssbsect_ssts_code = 'A'
+--AND   ssbsect_term_code = t_profe.sirasgn_term_code(+)
+--AND   ssbsect_crn = t_profe.crn(+)
+AND   sfrstcr_crn = ssrmeet_crn
+AND   sfrstcr_term_code = ssrmeet_term_code
+AND   sfrstcr_term_code = ssbsect_term_code
+AND   sfrstcr_crn = ssbsect_crn
+AND   sfrstcr_pidm = f_get_pidm_login ('$!exchange.properties.login')
+AND   sfrstcr_rsts_code IN ('RE', 'RW')
+AND   ssbsect_term_code = '$!exchange.properties.periodo'
+ORDER BY ssbsect_term_code, ssbsect_crn

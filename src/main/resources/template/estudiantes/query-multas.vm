@@ -1,0 +1,1 @@
+select ua_sire_multas_prog.consultar('$!exchange.properties.slogin') from dual

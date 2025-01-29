@@ -1,0 +1,6 @@
+ SELECT COALESCE( sum(shrtgpa_hours_attempted),0) AS C_INTENTADOS 
+ FROM SHRTGPA  
+ WHERE shrtgpa_gpa_type_ind = 'I'
+ AND shrtgpa_pidm = '$!exchange.properties.PIDM'   
+ AND shrtgpa_term_code <= '$!exchange.properties.periodo'  
+ AND shrtgpa_levl_code = '$!exchange.properties.nivel'

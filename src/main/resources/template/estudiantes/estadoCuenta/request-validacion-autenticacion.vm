@@ -1,0 +1,19 @@
+#set ($current = $body)
+{			
+   	 "SIdUsuario":"$!exchange.properties.username",
+  	 "SPassword":"$!exchange.properties.password",
+   
+	 "MensajeIn":
+	  {
+	    "ICanal":"1",
+	    "SIdentificadorProceso":"1",
+	    "SIdentificadorSesion":"http://prueba",
+	    "SHost":"http://prueba",  
+	    "SNombreOperacion":"autenticarPorLogin",
+	    "SOrigenCliente":"2021",
+	    "SUsuario":"1",
+	    "SVersion":"1"        
+	  }
+	
+	
+}

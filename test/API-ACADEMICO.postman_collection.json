@@ -1,0 +1,3607 @@
+{
+	"info": {
+		"_postman_id": "c069543a-a77a-40f4-b3d4-3e3d6cfa46ff",
+		"name": "API-ACADEMICO Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Datos Estudiante",
+			"item": [
+				{
+					"name": "estudiantes/informacionPersonal",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionPersonal?spregunta=Nivel Educativo Madre&snumerodocumento=1019095827",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionPersonal"
+							],
+							"query": [
+								{
+									"key": "scodigo",
+									"value": "201217726",
+									"disabled": true
+								},
+								{
+									"key": "slogin",
+									"value": "s.baez879",
+									"disabled": true
+								},
+								{
+									"key": "spregunta",
+									"value": "Nivel Educativo Madre"
+								},
+								{
+									"key": "snumerodocumento",
+									"value": "1019095827"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/informacionPersonal?spregunta=Nivel Educativo Madre&snumerodocumento=1019095827"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionPersonalEstudiante",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionPersonalEstudiante?slogin=cafanador&speriodo=201410",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionPersonalEstudiante"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "cafanador"
+								},
+								{
+									"key": "speriodo",
+									"value": "201410"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/informacionPersonalEstudiante?slogin=cafanador&speriodo=201410"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionAcudiente",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionAcudiente?slogin=ma.duran13",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionAcudiente"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "ma.duran13"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/informacionAcudiente?slogin=ma.duran13"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionInstitucion",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionInstitucion?slogin=ma.duran13",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionInstitucion"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "ma.duran13"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/informacionInstitucion?slogin=ma.duran13"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionPersonalOpciones",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionPersonalOpciones?slogin=s.vernaza10&speriodo=202110",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionPersonalOpciones"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "s.vernaza10"
+								},
+								{
+									"key": "speriodo",
+									"value": "202110"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/informacionPersonalOpciones?slogin=s.vernaza10&speriodo=202110"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionSobrepasoAcademico",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionSobrepasoAcademico?slogin=s.baez879&speriodo=201610",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionSobrepasoAcademico"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "s.baez879"
+								},
+								{
+									"key": "speriodo",
+									"value": "201610"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/informacionSobrepasoAcademico?slogin=s.baez879&speriodo=201610"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionPersonalRetenciones",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionPersonalRetenciones?slogin=s.baez879",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionPersonalRetenciones"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "s.baez879"
+								},
+								{
+									"key": "dfechainicio",
+									"value": "15/01/2015",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/datosEstudiante/informacionPersonalRetenciones?slogin=s.baez879"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionDoctoral/codeStudent",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionDoctoral/codeStudent?start=0&limit=100&codeStudent=201321478",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionDoctoral",
+								"codeStudent"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "status",
+									"value": "srths",
+									"disabled": true
+								},
+								{
+									"key": "status2",
+									"value": "sfghfgh",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "mr.alcocer10",
+									"disabled": true
+								},
+								{
+									"key": "faculty",
+									"value": "1234345",
+									"disabled": true
+								},
+								{
+									"key": "programId",
+									"value": "4735686",
+									"disabled": true
+								},
+								{
+									"key": "codeStudent",
+									"value": "201321478"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/datosEstudiante/informacionDoctoral?startLimit=0&finishLimit=20"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionDoctoral/faculty",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionDoctoral/faculty",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionDoctoral",
+								"faculty"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "srths",
+									"disabled": true
+								},
+								{
+									"key": "status2",
+									"value": "sfghfgh",
+									"disabled": true
+								},
+								{
+									"key": "faculty",
+									"value": "1234345",
+									"disabled": true
+								},
+								{
+									"key": "programId",
+									"value": "4735686",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "mr.alcocer10",
+									"disabled": true
+								},
+								{
+									"key": "faculty",
+									"value": "EDUCACION",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionDoctoral/userAndCode",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionDoctoral/userAndCode?username=mr.alcocer10&codeStudent=201321478",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionDoctoral",
+								"userAndCode"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "mr.alcocer10"
+								},
+								{
+									"key": "codeStudent",
+									"value": "201321478"
+								}
+							]
+						},
+						"description": "\r\n\r\nlocalhost:8186/api-academico/datosEstudiante/informacionDoctoral/userAndCode?username=mr.alcocer10&codeStudent=201321478"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionDoctoral",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionDoctoral",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionDoctoral"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "120",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/datosEstudiante/informacionDoctoral"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionDoctoral/program",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionDoctoral/program?programid=2",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionDoctoral",
+								"program"
+							],
+							"query": [
+								{
+									"key": "programid",
+									"value": "2"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/datosEstudiante/informacionDoctoral/program"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/informacionPersonalEstudiante",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/informacionPersonal/registros?slogin=cafanador&speriodo=201410",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"informacionPersonal",
+								"registros"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "cafanador"
+								},
+								{
+									"key": "speriodo",
+									"value": "201410"
+								}
+							]
+						},
+						"description": "tutaza.uniandes.edu.co:8186/api-academico/estudiantes/informacionPersonalEstudiante?slogin=cafanador&speriodo=201410"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estado Cuenta",
+			"item": [
+				{
+					"name": "cuenta/multas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"SPidm\": \"177431\",\r\n    \"ITipoPago\": 25,\r\n    \"IBillBNumber\": 1,\r\n    \"DMontoPagado\": 90.000,\r\n    \"ILibrary\": 1,\r\n    \"ICanal\": \"1\",\r\n    \"SIdentificadorProceso\": \"procesos\",\r\n    \"SHost\": \"1\",\r\n    \"SNombreOperacion\": \"actualizarMultasEstudiante\",\r\n    \"SUsuario\": \"1\",\r\n    \"SVersion\": \"1\",\r\n    \"SOrigenCliente\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/Cuenta/multas",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"Cuenta",
+								"multas"
+							]
+						},
+						"description": "localhost:8186/api-academico/estudiantes/estadoCuenta/multas"
+					},
+					"response": []
+				},
+				{
+					"name": "cuenta/{id}/prestamos",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/cuenta/jl.bohorquez150/prestamos?dfechaprestamo=01/01/2010&dfechadevolucion=01/31/2012",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"cuenta",
+								"jl.bohorquez150",
+								"prestamos"
+							],
+							"query": [
+								{
+									"key": "dfechaprestamo",
+									"value": "01/01/2010"
+								},
+								{
+									"key": "dfechadevolucion",
+									"value": "01/31/2012"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/estudiantes/jl.bohorquez150/estadoCuenta/prestamos?dfechaprestamo=01/01/2010&dfechadevolucion=01/31/2012"
+					},
+					"response": []
+				},
+				{
+					"name": "cuenta/ezProxy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/cuenta/ezProxy?username=n.ibarra&password=B4ckW0rk_&cliente=GENERAL&users_vip=no&access_vip=iortiz;caleal;lcaldero",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"cuenta",
+								"ezProxy"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "n.ibarra"
+								},
+								{
+									"key": "password",
+									"value": "B4ckW0rk_"
+								},
+								{
+									"key": "cliente",
+									"value": "GENERAL"
+								},
+								{
+									"key": "users_vip",
+									"value": "no"
+								},
+								{
+									"key": "access_vip",
+									"value": "iortiz;caleal;lcaldero"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/estudiantes/estadoCuenta/ezProxy?username&password&cliente&users_vip&access_vip"
+					},
+					"response": []
+				},
+				{
+					"name": "cuenta/{slogin}/historial/prestamos",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/cuenta/caleal/historial/prestamos",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"cuenta",
+								"caleal",
+								"historial",
+								"prestamos"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "caleal",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/"
+					},
+					"response": []
+				},
+				{
+					"name": "cuenta/{slogin}/multas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/cuenta/caleal/multas",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"cuenta",
+								"caleal",
+								"multas"
+							]
+						},
+						"description": "localhost:8186/api-academico/Cuenta/caleal/multas"
+					},
+					"response": []
+				},
+				{
+					"name": "cuenta/{slogin}/pagos",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/cuenta/cafanador/pagos",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"cuenta",
+								"cafanador",
+								"pagos"
+							]
+						},
+						"description": "localhost:8186/api-academico/cuenta/cafanador/pagos"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Creditos",
+			"item": [
+				{
+					"name": "creditos/transferir",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"tipoHomologacion\": \"05\",\r\n  \"pidm\": \"416077\",\r\n  \"codigoUniversidad\": \"U2811\",\r\n  \"prefijoCurso\": \"IMEC\",\r\n  \"numeroCurso\": \"4001\",\r\n  \"nivel\": \"DO\",\r\n  \"programa\": \"D-PSIC\",\r\n  \"grado\": \"D-PSIC\",\r\n  \"periodoAsistencia\": \"202319\",\r\n  \"examen\": \"NA\",\r\n  \"idioma\": \"NA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/transferir",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"transferir"
+							]
+						},
+						"description": "https://fuseqa.uniandes.edu.co:8186/api-academico/creditos/transferir"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/aprobados",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/aprobados?periodo=201610&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"aprobados"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								},
+								{
+									"key": "sumHomologados",
+									"value": "false",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/aprobados?periodo=201010&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/aprobados/homologados-semestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/aprobados/homologados-semestre?periodo=201610&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"aprobados",
+								"homologados-semestre"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/aprobados/homologados-semestre?periodo=201810&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/aprobados/homologados",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/aprobados/homologados?periodo=201810&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"aprobados",
+								"homologados"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201810"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/aprobados/homologados?periodo=201810&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/semestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/semestre?creditosIntentados=134&codigoPrograma=IELC",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"semestre"
+							],
+							"query": [
+								{
+									"key": "creditosIntentados",
+									"value": "134"
+								},
+								{
+									"key": "codigoPrograma",
+									"value": "IELC"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/semestre?creditosIntentados=16&codigoPrograma=IELC"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/aprobados/semestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/aprobados/semestre?periodo=201610&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"aprobados",
+								"semestre"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/aprobados/semestre?periodo=201610&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/aprobados/transferidos",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/aprobados/transferidos?periodo=201610&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"aprobados",
+								"transferidos"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/aprobados/transferidos?periodo=201610&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/intentados/homologados-semestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/intentados/homologados-semestre?periodo=201610&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"intentados",
+								"homologados-semestre"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/intentados/homologados-semestre?periodo=201610&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/intentados/semestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/intentados/semestre?periodo=201610&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"intentados",
+								"semestre"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/intentados/semestre?periodo=201610&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/intentados/homologados",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/intentados/homologados?periodo=201610&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"intentados",
+								"homologados"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/intentados/homologados?periodo=201610&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/inscritos/semestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/inscritos/semestre?periodo=201610",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"inscritos",
+								"semestre"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "PR",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/inscritos/semestre"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/intentados",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/s.baez879/intentados?periodo=201610&nivel=MA&sumHomologados=true",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"s.baez879",
+								"intentados"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								},
+								{
+									"key": "sumHomologados",
+									"value": "true"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/intentados?periodo=201610&nivel=MA&sumHomologados=true"
+					},
+					"response": []
+				},
+				{
+					"name": "creditos/{id}/semestre/calcular-semestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/creditos/jf.lopez719/semestre/calcular-semestre?periodo=201920",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"creditos",
+								"jf.lopez719",
+								"semestre",
+								"calcular-semestre"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201920"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/creditos/s.baez879/semestre/calcular-semestre?periodo=201610"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Secciones",
+			"item": [
+				{
+					"name": "secciones/{crn}/{periodo}",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/secciones/19434/201610",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"secciones",
+								"19434",
+								"201610"
+							]
+						},
+						"description": "localhost:8186/api-academico/secciones/19434/201610"
+					},
+					"response": []
+				},
+				{
+					"name": "secciones/{crn}/{periodo}/estudiantes",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/secciones/19434/201610/estudiantes",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"secciones",
+								"19434",
+								"201610",
+								"estudiantes"
+							]
+						},
+						"description": "localhost:8186/api-academico/secciones/19434/201610/estudiantes"
+					},
+					"response": []
+				},
+				{
+					"name": "secciones/{crn}/{periodo}/cupos",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/secciones/13577/201820/cupos",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"secciones",
+								"13577",
+								"201820",
+								"cupos"
+							]
+						},
+						"description": "localhost:8186/api-academico/secciones/19434/201610/cupos"
+					},
+					"response": []
+				},
+				{
+					"name": "secciones/{crn}/{periodo}/notas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/secciones/13577/201820/notas",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"secciones",
+								"13577",
+								"201820",
+								"notas"
+							]
+						},
+						"description": "localhost:8186/api-academico/secciones/13577/201820/notas"
+					},
+					"response": []
+				},
+				{
+					"name": "secciones/crn",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/secciones/crn?snombreCurso=MATE&scodigoCurso=2210&sseccion=1&speriodo=201510",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"secciones",
+								"crn"
+							],
+							"query": [
+								{
+									"key": "snombreCurso",
+									"value": "MATE"
+								},
+								{
+									"key": "scodigoCurso",
+									"value": "2210"
+								},
+								{
+									"key": "sseccion",
+									"value": "1"
+								},
+								{
+									"key": "speriodo",
+									"value": "201510"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/secciones/crn?snombreCurso=MATE&scodigoCurso=2210&sseccion=1&speriodo=201510"
+					},
+					"response": []
+				},
+				{
+					"name": "secciones/horario",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/secciones/horario?snombreCurso=MATE&scodigoCurso=2210&speriodo=201510",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"secciones",
+								"horario"
+							],
+							"query": [
+								{
+									"key": "snombreCurso",
+									"value": "MATE"
+								},
+								{
+									"key": "scodigoCurso",
+									"value": "2210"
+								},
+								{
+									"key": "speriodo",
+									"value": "201510"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/secciones/horario?snombreCurso=MATE&scodigoCurso=2210&speriodo=201510"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estudiante",
+			"item": [
+				{
+					"name": "estudiantes/NivelAcademico/",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/NivelAcademico/?slogin=jm.revelo120&speriodo=201820",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"NivelAcademico",
+								""
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "jm.revelo120"
+								},
+								{
+									"key": "speriodo",
+									"value": "201820"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/{id}/programas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/ma.duran13/programas",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"ma.duran13",
+								"programas"
+							]
+						},
+						"description": "localhost:8186/api-academico/estudiantes/ma.duran13/programas"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/homologaciones",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/homologaciones?login=cafanador",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"homologaciones"
+							],
+							"query": [
+								{
+									"key": "login",
+									"value": "cafanador"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/estudiantes/homologaciones?login=cafanador"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/becado",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/becado?slogin=jm.giraldo12&speriodo=201610",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"becado"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "jm.giraldo12"
+								},
+								{
+									"key": "speriodo",
+									"value": "201610"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/becado?slogin=cafanador&speriodo=201410"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/matriculado",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/matriculado?slogin=ma.duran13&speriodo=201610",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"matriculado"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "ma.duran13"
+								},
+								{
+									"key": "speriodo",
+									"value": "201610"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/gestionDatosEstudiante/matriculado?slogin=cafanador&speriodo=201410"
+					},
+					"response": []
+				},
+				{
+					"name": "estudiantes/{id}/programas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/estudiantes/s.baez879/programas?periodo=201610",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"estudiantes",
+								"s.baez879",
+								"programas"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "cafanador",
+									"disabled": true
+								},
+								{
+									"key": "documento",
+									"value": "1019095827",
+									"disabled": true
+								},
+								{
+									"key": "periodo",
+									"value": "201610"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/estudiantes/cafanador/programas?periodo=201620"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notas",
+			"item": [
+				{
+					"name": "notas/homologadas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/homologadas?snombrecurso=LENG&scodigocurso=112&snivel=PR&scodigo=199521959",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"homologadas"
+							],
+							"query": [
+								{
+									"key": "snombrecurso",
+									"value": "LENG"
+								},
+								{
+									"key": "scodigocurso",
+									"value": "112"
+								},
+								{
+									"key": "snivel",
+									"value": "PR"
+								},
+								{
+									"key": "snumerodocumento",
+									"value": "79940821",
+									"disabled": true
+								},
+								{
+									"key": "slogin",
+									"value": "id.ruiz25",
+									"disabled": true
+								},
+								{
+									"key": "scodigo",
+									"value": "199521959"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/homologadas?snombrecurso=LENG&scodigocurso=112&snivel=PR&scodigo=199521959"
+					},
+					"response": []
+				},
+				{
+					"name": "notas/promedioAcumulado",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/promedioAcumulado?snivel=MA&speriodo=201720&snumerodocumento=80843479",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"promedioAcumulado"
+							],
+							"query": [
+								{
+									"key": "snivel",
+									"value": "MA"
+								},
+								{
+									"key": "speriodo",
+									"value": "201720"
+								},
+								{
+									"key": "snumerodocumento",
+									"value": "80843479"
+								},
+								{
+									"key": "spidm",
+									"value": "230859",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/promedioAcumulado?snivel=MA&speriodo=201720&snumerodocumento=80843479"
+					},
+					"response": []
+				},
+				{
+					"name": "notas/estudiante",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/estudiante?slogin=cafanador&speriodo=201720",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"estudiante"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "cafanador"
+								},
+								{
+									"key": "speriodo",
+									"value": "201720"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/estudiante?slogin=cafanador&speriodo=201720"
+					},
+					"response": []
+				},
+				{
+					"name": "notas/historico",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/historico?slogin=cafanador",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"historico"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "cafanador"
+								},
+								{
+									"key": "snombrecurso",
+									"value": "LENG",
+									"disabled": true
+								},
+								{
+									"key": "scrn",
+									"value": "14888",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/historico?slogin=cafanador"
+					},
+					"response": []
+				},
+				{
+					"name": "notas/promedioSeccion",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/promedioSeccion?scrn=20856&speriodo=201210",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"promedioSeccion"
+							],
+							"query": [
+								{
+									"key": "scrn",
+									"value": "20856"
+								},
+								{
+									"key": "speriodo",
+									"value": "201210"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/promedioSeccion?scrn=20856&speriodo=201210"
+					},
+					"response": []
+				},
+				{
+					"name": "notas/promedioSemestre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/promedioSemestre?slogin=cafanador&speriodo=201610&snivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"promedioSemestre"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "cafanador"
+								},
+								{
+									"key": "speriodo",
+									"value": "201610"
+								},
+								{
+									"key": "snivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/promedioSemestre?slogin=cafanador&speriodo=201610&snivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "notas/semestreCalificado/maximoYminimo",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/semestreCalificado/maximoYminimo?slogin=cafanador&snivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"semestreCalificado",
+								"maximoYminimo"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "cafanador"
+								},
+								{
+									"key": "snivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/semestreCalificado/maximoYminimo?slogin=cafanador&snivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "notas/sicua",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/notas/sicua?slogin=cafanador&scodigocurso=201420_ARTI4106_01",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"notas",
+								"sicua"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "cafanador"
+								},
+								{
+									"key": "scodigocurso",
+									"value": "201420_ARTI4106_01"
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/notas/sicua?slogin=cafanador&scodigocurso=201420_ARTI4106_01&"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suspensiones",
+			"item": [
+				{
+					"name": "suspensiones/academicas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/suspensiones/academicas?slogin=jm.revelo120",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"suspensiones",
+								"academicas"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "jm.revelo120"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/suspensiones/suspensionesAcademicas?slogin=jm.revelo120"
+					},
+					"response": []
+				},
+				{
+					"name": "suspensiones/disciplinarias",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/suspensiones/disciplinarias?slogin=jm.revelo120",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"suspensiones",
+								"disciplinarias"
+							],
+							"query": [
+								{
+									"key": "slogin",
+									"value": "jm.revelo120"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/suspensiones/disciplinarias?slogin=jm.revelo120"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cursos",
+			"item": [
+				{
+					"name": "cursos/info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/cursos/info?curso=4701&periodo=201810&crn=28255",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"cursos",
+								"info"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "ADMI",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "MADM",
+									"disabled": true
+								},
+								{
+									"key": "curso",
+									"value": "4701"
+								},
+								{
+									"key": "facultad",
+									"value": "AD",
+									"disabled": true
+								},
+								{
+									"key": "periodo",
+									"value": "201810"
+								},
+								{
+									"key": "crn",
+									"value": "28255"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/cursos/info?codigo=ADMI&nombre=MADM&curso=4701&facultad=AD&periodo=201810"
+					},
+					"response": []
+				},
+				{
+					"name": "cursos/",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "<DQnr-7V",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-Homlg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/cursos/?codigo=CESP&nombre=TRANSICION&curso=CESP1101",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"cursos",
+								""
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "CESP"
+								},
+								{
+									"key": "nombre",
+									"value": "TRANSICION"
+								},
+								{
+									"key": "curso",
+									"value": "CESP1101"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/cursos/?codigo=CESP&nombre=TRANSICION&curso=CESP1101"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profesores",
+			"item": [
+				{
+					"name": "profesores/{id}/{periodo}/secciones",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/profesores/npena/201610/secciones",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"profesores",
+								"npena",
+								"201610",
+								"secciones"
+							],
+							"query": [
+								{
+									"key": "crn",
+									"value": "19434",
+									"disabled": true
+								},
+								{
+									"key": "nombreCurso",
+									"value": "INGENIERIA DE TELETRAFIC",
+									"disabled": true
+								},
+								{
+									"key": "seccion",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profesores/{login}/info",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/profesores/rcasalla/info",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"profesores",
+								"rcasalla",
+								"info"
+							]
+						},
+						"description": "localhost:8186/api-academico/profesores/rcasalla/info"
+					},
+					"response": []
+				},
+				{
+					"name": "profesores/academia",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/profesores/academia?idProfesor=7707",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"profesores",
+								"academia"
+							],
+							"query": [
+								{
+									"key": "idProfesor",
+									"value": "7707"
+								},
+								{
+									"key": "start",
+									"value": "50",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/profesores/academia?idProfesor=77070"
+					},
+					"response": []
+				},
+				{
+					"name": "profesores/{login}/producto",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/profesores/npena/producto",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"profesores",
+								"npena",
+								"producto"
+							]
+						},
+						"description": "localhost:8186/api-academico/profesores/sturno.es/producto"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inscripciones",
+			"item": [
+				{
+					"name": "inscripciones/{id}/secciones",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/inscripciones/s.baez879/secciones?periodo=201510&tipoInscripcion=RW,RC",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"inscripciones",
+								"s.baez879",
+								"secciones"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201510"
+								},
+								{
+									"key": "tipoInscripcion",
+									"value": "RW,RC"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/inscripciones/cafanador/secciones?periodo=201510&tipoInscripcion=RW,RC"
+					},
+					"response": []
+				},
+				{
+					"name": "inscripciones/{id}/secciones/info",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/inscripciones/cafanador/secciones/info?periodo=201510&tipoInscripcion=RW,RC",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"inscripciones",
+								"cafanador",
+								"secciones",
+								"info"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201510"
+								},
+								{
+									"key": "tipoInscripcion",
+									"value": "RW,RC"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/inscripciones/cafanador/secciones/info?periodo=201510&tipoInscripcion=RW,RC"
+					},
+					"response": []
+				},
+				{
+					"name": "inscripciones/{id}/secciones/cantidad",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/inscripciones/s.baez879/secciones/cantidad?periodo=201620&tipoInscripcion=RW,RC&nivel=MA",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"inscripciones",
+								"s.baez879",
+								"secciones",
+								"cantidad"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201620"
+								},
+								{
+									"key": "tipoInscripcion",
+									"value": "RW,RC"
+								},
+								{
+									"key": "nivel",
+									"value": "MA"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/inscripciones/s.baez879/secciones/cantidad?periodo=201620&tipoInscripcion=RW,RC&nivel=MA"
+					},
+					"response": []
+				},
+				{
+					"name": "/inscripciones/{id}/turno",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "<DQnr-7V",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-Homlg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/inscripciones/cafanador/turno?periodo=201510",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"inscripciones",
+								"cafanador",
+								"turno"
+							],
+							"query": [
+								{
+									"key": "periodo",
+									"value": "201510"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dependencia",
+			"item": [
+				{
+					"name": "/dependencia",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/dependencia/?sdependencianombre=Departamento de Historia del Arte&sdependenciaexternalid=ARTE",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"dependencia",
+								""
+							],
+							"query": [
+								{
+									"key": "sdependencianombre",
+									"value": "Departamento de Historia del Arte"
+								},
+								{
+									"key": "sdependenciaexternalid",
+									"value": "ARTE"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/dependencia/?sdependencianombre=Departamento de Historia del Arte&sdependenciaexternalid=ARTE"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "egresados",
+			"item": [
+				{
+					"name": "/egresados/{id}/titulos",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/egresados/cafanador/titulos",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"egresados",
+								"cafanador",
+								"titulos"
+							]
+						},
+						"description": "localhost:8186/api-academico/egresados/cafanador/titulos"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "investigacion",
+			"item": [
+				{
+					"name": "investigacion/researchGroups",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/investigacion/researchGroups",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"investigacion",
+								"researchGroups"
+							],
+							"query": [
+								{
+									"key": "idGroup",
+									"value": "385",
+									"disabled": true
+								},
+								{
+									"key": "start",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "sigla",
+									"value": "00000000019494",
+									"disabled": true
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/investigacion/researchGroups"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "periodo",
+			"item": [
+				{
+					"name": "/periodo/",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/periodo?fechainicial=2015/01/02&fechafinal=2015/12/02&tiposperiodo=11",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"periodo"
+							],
+							"query": [
+								{
+									"key": "fechainicial",
+									"value": "2015/01/02"
+								},
+								{
+									"key": "fechafinal",
+									"value": "2015/12/02"
+								},
+								{
+									"key": "tiposperiodo",
+									"value": "11"
+								}
+							]
+						},
+						"description": "localhost:8186/api-academico/periodo?fechainicial=2015/01/02&fechafinal=2015/12/02&tiposperiodo=11"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "programas",
+			"item": [
+				{
+					"name": "/programas/{id}/estructura",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kDZ5byQS",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "SvcPr-Fuse-SAPAdm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "topaipi.uniandes.edu.co:8186/api-academico/programas/M-ARTI/estructura?facultad=IN",
+							"host": [
+								"topaipi",
+								"uniandes",
+								"edu",
+								"co"
+							],
+							"port": "8186",
+							"path": [
+								"api-academico",
+								"programas",
+								"M-ARTI",
+								"estructura"
+							],
+							"query": [
+								{
+									"key": "facultad",
+									"value": "IN"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

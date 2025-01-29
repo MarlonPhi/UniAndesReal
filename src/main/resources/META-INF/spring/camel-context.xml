@@ -8,10 +8,22 @@
     xmlns:osgix="http://www.springframework.org/schema/osgi-compendium"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/osgi-compendium          http://www.springframework.org/schema/osgi-compendium/spring-osgi-compendium.xsd          http://www.springframework.org/schema/beans          http://www.springframework.org/schema/beans/spring-beans.xsd       http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd       http://www.springframework.org/schema/context       http://www.springframework.org/schema/context/spring-context.xsd       http://www.springframework.org/schema/jee       http://www.springframework.org/schema/jee/spring-jee.xsd       http://www.springframework.org/schema/osgi       http://www.springframework.org/schema/osgi/spring-osgi.xsd">
     <bean class="org.apache.camel.component.sql.SqlComponent" id="banner"/>
+    <bean class="org.apache.camel.component.sql.SqlComponent" id="prescoring"/>
+    <bean class="org.apache.camel.component.sql.SqlComponent" id="qa"/>
     <bean class="org.apache.camel.component.sql.SqlComponent" id="homologaciones"/>
+    <bean class="org.apache.camel.component.sql.SqlComponent" id="nife"/>
+    <bean class="org.apache.camel.component.sql.SqlComponent" id="bibliotecaDeposito"/>
+    <bean class="org.apache.camel.component.sql.SqlComponent" id="nifePortalayr"/>
+    <bean class="org.apache.camel.component.sql.SqlComponent" id="gestDocBanner"/>
+    <bean class="org.apache.camel.component.sql.SqlComponent" id="admisSalesForce"/>
+    <!--<bean class="org.apache.camel.component.sql.SqlComponent" id="bannerNukak"/>-->
     <bean
         class="org.apache.camel.component.netty.http.SecurityConstraintMapping" id="authConstrain"/>
+    <bean class="org.slf4j.LoggerFactory" factory-method="getLogger" id="apiAcademico_log">
+        <constructor-arg value="apiAcademicoLog"/>
+    </bean>
     <osgix:cm-properties id="props-academico" persistent-id="api.academico"/>
+    <osgix:cm-properties id="props-http-codes" persistent-id="http.codes"/>
     <osgi:reference id="sharedNettyHttpServer" interface="org.apache.camel.component.netty.http.NettySharedHttpServer"/>
     <camelContext id="API-ACADEMICO" trace="false" useMDCLogging="true" xmlns="http://camel.apache.org/schema/spring">
         <package>co.edu.uniandes.fuse.api.academico.routes</package>

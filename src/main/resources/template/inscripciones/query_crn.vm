@@ -1,0 +1,10 @@
+  SELECT DISTINCT SFRSTCR_CRN CRN 
+		FROM SFRSTCR, SSBSECT, SFBETRM 
+		WHERE SFRSTCR_CRN = SSBSECT_CRN  
+		AND SFRSTCR_PIDM = SFBETRM_PIDM 
+        AND SSBSECT_TERM_CODE = '$!exchange.properties.periodo' 
+		AND SFRSTCR_TERM_CODE = '$!exchange.properties.periodo' 
+        AND SFBETRM_TERM_CODE =  '$!exchange.properties.periodo' 
+		AND SFBETRM_PIDM = '$!exchange.properties.PIDM' 
+		AND sfrstcr_rsts_code IN ($!exchange.properties.tipoInscripcion)  
+		order by SFRSTCR_TERM_CODE desc

@@ -1,0 +1,37 @@
+SELECT DISTINCT 
+				'$!exchange.properties.Speriodo'   PERIODO
+				,p1.sorlcur_pidm 			SPIDM
+				,sorlfos_majr_code 			CODIGO_OPCION
+				,stvmajr_desc				DESCRI_OPCION
+                ,sorlfos_priority_no        PRIORIDAD
+FROM SORLCUR p1
+					  ,SORLFOS
+					  ,STVMAJR
+WHERE 
+	p1.sorlcur_term_code = 
+				   (SELECT MAX(l1.sorlcur_term_code)
+					  FROM SORLCUR l1
+					 WHERE l1.sorlcur_pidm        = p1.sorlcur_pidm
+					   AND l1.sorlcur_priority_no = 1
+					   AND l1.sorlcur_lmod_code	  = 'LEARNER'
+					   AND l1.sorlcur_cact_code   = 'ACTIVE'
+					   AND l1.sorlcur_term_code	  <= '$!exchange.properties.Speriodo' 
+				   )
+				   AND p1.sorlcur_seqno = 
+					   (SELECT MAX(l1.sorlcur_seqno)
+						  FROM SORLCUR l1
+						 WHERE l1.sorlcur_pidm        = p1.sorlcur_pidm
+						   AND l1.sorlcur_priority_no = 1
+						   AND l1.sorlcur_lmod_code	  = 'LEARNER'
+						   AND l1.sorlcur_cact_code   = 'ACTIVE'
+						   AND l1.sorlcur_term_code	  = p1.sorlcur_term_code
+					   )		   
+				   AND p1.sorlcur_lmod_code	  = 'LEARNER'
+				   AND p1.sorlcur_cact_code   = 'ACTIVE'
+				   AND p1.sorlcur_pidm		  = sorlfos_pidm
+				   AND p1.sorlcur_seqno		  = sorlfos_lcur_seqno
+				   AND sorlfos_cact_code	  = 'ACTIVE'
+				   AND sorlfos_csts_code	  = 'INPROGRESS'
+				   AND sorlfos_lfst_code	  = 'CONCENTRATION'
+				   AND sorlfos_majr_code	  = stvmajr_code
+				   AND p1.sorlcur_pidm        = '$!exchange.properties.spidm'

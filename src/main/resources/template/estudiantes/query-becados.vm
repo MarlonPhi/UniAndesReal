@@ -1,0 +1,22 @@
+SELECT T1.SGRASSI_PIDM PIDM,
+T1.SGRASSI_GTYP_CODE CODIGO_BECA,
+STVGTYP_DESC DESCRIPCION_BECA,
+T1.SGRASSI_TERM_CODE_EFF SEMESTRE_BECAS
+ FROM SGRASSI T1,
+STVGTYP
+WHERE  T1.SGRASSI_GSTA_CODE = 'A'
+ AND T1.SGRASSI_GTYP_CODE  = STVGTYP.STVGTYP_CODE
+ AND T1.SGRASSI_TERM_CODE_EFF  =
+                                 (SELECT MAX (T2.SGRASSI_TERM_CODE_EFF)
+                                     FROM SGRASSI T2
+                                    WHERE T2.SGRASSI_GSTA_CODE = 'A'
+                                      AND T2.SGRASSI_PIDM = T1.SGRASSI_PIDM)
+ 
+#if($!exchange.properties.spidm && $!exchange.properties.spidm != '')                                          
+AND T1.SGRASSI_PIDM = '$!exchange.properties.spidm'
+#end
+#if($exchange.properties.Speriodo && $exchange.properties.Speriodo != '')
+AND T1.SGRASSI_TERM_CODE_EFF = '$!exchange.properties.Speriodo'
+#end
+	
+	

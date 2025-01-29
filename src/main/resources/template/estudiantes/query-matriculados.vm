@@ -1,0 +1,11 @@
+ SELECT 
+ 		  SFBETRM_TERM_CODE SEMESTRE
+ 		, SFBETRM_PIDM CARNET 
+ 
+ FROM 
+ 		SFBETRM
+  WHERE 
+  		SFBETRM_PIDM = '$!exchange.properties.spidm' 
+  	AND SFBETRM_TERM_CODE = '$!exchange.properties.Speriodo' 
+  	AND SFBETRM_ESTS_CODE IN ('EL','IT') 
+  	AND SFBETRM_AR_IND = 'C'

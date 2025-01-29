@@ -1,0 +1,7 @@
+SELECT stvterm_start_date fec_inicio,
+        stvterm_end_date fec_fin,
+        stvterm_desc desc_semestre,
+        stvterm_code periodo
+FROM stvterm
+WHERE substr(stvterm_code,1,4) LIKE '$!exchange.properties.anio'
+ORDER BY stvterm_start_date

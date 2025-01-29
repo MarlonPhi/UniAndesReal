@@ -1,0 +1,7 @@
+SELECT DISTINCT SSBSECT_TERM_CODE periodo
+     ,SSBSECT_CRN crn
+	 ,SSBSECT_MAX_ENRL maxins
+	 ,SSBSECT_ENRL ins
+FROM SSBSECT WHERE 
+	 SSBSECT.SSBSECT_TERM_CODE = '$!exchange.properties.periodo' 
+	 AND SSBSECT.SSBSECT_CRN like '$!exchange.properties.crn%'

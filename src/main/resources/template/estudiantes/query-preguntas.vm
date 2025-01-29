@@ -1,0 +1,15 @@
+SELECT DISTINCT sarquan_answer
+FROM SARQUAN r1
+WHERE sarquan_pidm            = $!exchange.properties.SPidm
+AND sarquan_term_code_entry =
+(SELECT max(sarquan_term_code_entry)
+FROM SARQUAN
+WHERE sarquan_pidm     = $!exchange.properties.SPidm
+AND sarquan_question = '$!exchange.properties.spregunta'
+AND sarquan_term_code_entry = r1.sarquan_term_code_entry)
+AND sarquan_appl_no         =
+(SELECT max(sarquan_appl_no)
+FROM SARQUAN
+WHERE sarquan_pidm            = $!exchange.properties.SPidm
+AND sarquan_question        = '$!exchange.properties.spregunta')
+AND sarquan_question        = '$!exchange.properties.spregunta'

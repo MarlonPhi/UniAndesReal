@@ -1,0 +1,18 @@
+SELECT SPRHOLD_HLDD_CODE  CODIGO_RETENCION
+,SPRHOLD_ORIG_CODE    ORIGEN_RETENCION
+,SPRHOLD_REASON    RAZON
+,SPRHOLD_FROM_DATE    FECHA_INI_RETENCION
+,SPRHOLD_TO_DATE    FECHA_FIN_REENCION
+,SPRHOLD_ACTIVITY_DATE  FECHA_ACTIVIDAD
+,SPRHOLD_PIDM         SPIDM
+FROM  SPRHOLD
+WHERE SPRHOLD_PIDM = '$!exchange.properties.spidm'
+#if($!exchange.properties.sCodigo && $!exchange.properties.sCodigo != '')
+AND SPRHOLD_HLDD_CODE = '$!exchange.properties.sCodigo'
+#end
+#if($!exchange.properties.fechaInicial && $!exchange.properties.fechaInicial != '')
+AND SPRHOLD_FROM_DATE >= to_date('$!exchange.properties.fechaInicial','dd/mm/yyyy')
+#end
+#if($!exchange.properties.fechaFinal && $!exchange.properties.fechaFinal != '')
+AND SPRHOLD_FROM_DATE <= to_date('$!exchange.properties.fechaFinal','dd/mm/yyyy')
+#end

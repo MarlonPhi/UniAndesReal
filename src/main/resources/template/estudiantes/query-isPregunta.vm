@@ -1,0 +1,6 @@
+select 
+		* 
+from 
+	FUSEPARAMETERBN 
+where 
+	"question" = '$!exchange.properties.spregunta'

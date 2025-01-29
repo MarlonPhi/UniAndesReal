@@ -1,0 +1,6 @@
+declare
+     result  SYS_REFCURSOR;
+begin
+
+    result := ua_sire_multas_prog.consultar('$!exchange.properties.slogin');
+end;

@@ -1,0 +1,3 @@
+SELECT STVLEVL.STVLEVL_DESC as dnivel 
+FROM stvlevl 
+WHERE stvlevl_code = '$!exchange.properties.nivelD'

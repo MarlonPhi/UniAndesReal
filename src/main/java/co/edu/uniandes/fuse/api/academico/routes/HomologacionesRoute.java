@@ -45,7 +45,6 @@ public class HomologacionesRoute extends RestConfiguration{
 	      		.to("direct:bannerSQL")
 	      		.log("Response: ${body}")
 	      		.bean(HomologacionesService.class, "getProgramasH")
-	      		.wireTap("mock:outputGetProgramas")
 	      ;
 	}
 

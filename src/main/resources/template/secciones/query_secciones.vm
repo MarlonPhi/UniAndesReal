@@ -27,7 +27,7 @@ FROM
             )
     ) t_scrsyln
 WHERE
-    ssbsect_term_code = '$headers.periodo' 
+    ssbsect_term_code = '$!exchange.properties.periodo' 
     AND scbcrse_subj_code = ssbsect_subj_code
     AND scbcrse_crse_numb = ssbsect_crse_numb
     AND scbcrse_subj_code || scbcrse_crse_numb = t_scrsyln.code (+)
@@ -38,7 +38,7 @@ WHERE
         FROM
             scbcrse cr2
         WHERE
-            cr2.scbcrse_eff_term <= '$headers.periodo' 
+            cr2.scbcrse_eff_term <= '$!exchange.properties.periodo' 
             AND cr2.scbcrse_subj_code = ssbsect_subj_code
             AND cr2.scbcrse_crse_numb = ssbsect_crse_numb
     )

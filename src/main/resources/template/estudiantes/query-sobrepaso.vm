@@ -1,0 +1,38 @@
+SELECT DISTINCT sgbstdn_term_code_eff   SEMESTRE_SOBREPASO
+			  ,sgbstdn_pidm				ESTUDIANTE_PIDM	
+			  ,sgbstdn_astd_code        SOBREP
+			  ,sgbstdn_admt_code        TIPO_ADMIS
+			  ,p1.sorlcur_levl_code     NIVEL
+  FROM sgbstdn
+  	  ,sorlcur p1
+	  ,sorlfos
+ WHERE sgbstdn_pidm			  = p1.sorlcur_pidm
+   AND p1.sorlcur_term_code	  = 
+ 	   (SELECT MAX(l1.sorlcur_term_code)
+	      FROM sorlcur l1
+		 WHERE l1.sorlcur_pidm        = p1.sorlcur_pidm
+		   AND l1.sorlcur_priority_no = 1
+		   AND l1.sorlcur_lmod_code	  = 'LEARNER'
+   		   AND l1.sorlcur_cact_code   = 'ACTIVE'
+   		   AND l1.sorlcur_term_code <= '$!exchange.properties.Speriodo'          
+	   )
+   AND p1.sorlcur_seqno       = 
+ 	   (SELECT MAX(l1.sorlcur_seqno)
+	      FROM sorlcur l1
+		 WHERE l1.sorlcur_pidm        = p1.sorlcur_pidm
+		   AND l1.sorlcur_priority_no = 1
+		   AND l1.sorlcur_lmod_code	  = 'LEARNER'
+   		   AND l1.sorlcur_cact_code   = 'ACTIVE'
+		   AND l1.sorlcur_term_code	  = p1.sorlcur_term_code
+	   )		   
+   AND p1.sorlcur_priority_no = 1
+   AND p1.sorlcur_lmod_code	  = 'LEARNER'
+   AND p1.sorlcur_cact_code   = 'ACTIVE'   
+       AND sgbstdn_term_code_eff  = '$!exchange.properties.Speriodo'
+       AND sgbstdn_term_code_astd = '$!exchange.properties.Speriodo'   
+    AND p1.sorlcur_pidm = '$!exchange.properties.spidm'   
+   AND p1.sorlcur_seqno		  = sorlfos_lcur_seqno
+   AND sorlfos_priority_no	  = 1
+   AND sorlfos_cact_code	  = 'ACTIVE'
+   AND sorlfos_csts_code	  = 'INPROGRESS'
+   AND sorlfos_lfst_code	  = 'MAJOR'

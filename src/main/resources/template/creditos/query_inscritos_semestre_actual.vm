@@ -1,0 +1,11 @@
+SELECT  COALESCE(SUM(SFRSTCR_CREDIT_HR),0) CONTEO_CREDITOS
+		  FROM SFRSTCR
+		 WHERE SFRSTCR_RSTS_CODE IN ('RE','RW')
+		 	AND   sfrstcr_pidm = '$!exchange.properties.PIDM'
+		  #if($!exchange.properties.periodo && $!exchange.properties.periodo != '')
+			AND   SFRSTCR_TERM_CODE = '$!exchange.properties.periodo' 
+  		  #end  
+			   
+		  #if($!exchange.properties.nivel && $!exchange.properties.nivel != '')
+			AND   sfrstcr_levl_code  = '$!exchange.properties.nivel' 
+		  #end  

@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS CANTIDAD_USUARIOS FROM ua_datos_aspirantes WHERE procesado = 'N' AND nro_documento IS NOT NULL

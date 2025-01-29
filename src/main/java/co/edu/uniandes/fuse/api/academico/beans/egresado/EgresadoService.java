@@ -39,7 +39,9 @@ public class EgresadoService {
 			exchange.getIn().setBody(listaTitulos);			
 
 		} else {
-			exchange.getOut().setHeader(Exchange.HTTP_RESPONSE_CODE, "204");
+			exchange.setProperty("HttpErrorProperty", "http.code.not.found");
+			exchange.setProperty("InternalErrorProperty", "internal.code.resource.not.found");
+			throw new Exception("Recurso no encontrado");
 		}
 	}
 	

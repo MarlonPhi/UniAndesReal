@@ -1,15 +1,15 @@
 package co.edu.uniandes.fuse.api.academico.routes;
 
 
-import org.apache.camel.component.jackson.JacksonDataFormat;
 import org.apache.camel.model.rest.RestParamType;
 
 import co.edu.uniandes.fuse.api.academico.beans.programa.ProgramaService;
-import co.edu.uniandes.fuse.api.academico.models.programa.Programa;
+import co.edu.uniandes.fuse.api.academico.models.entity.Programa;
+import co.edu.uniandes.fuse.api.academico.processors.ValidateErrorProcessor;
 import co.edu.uniandes.fuse.core.utils.models.ErrorResponse;
 
 /**
- * Definición de componentes rest/swagger y definición de rutas para el recurso sedes
+ * Definiciï¿½n de componentes rest/swagger y definiciï¿½n de rutas para el recurso sedes
  * 
  * @author CedEx Desarrollo de Software - DSIT - Universidad de los Andes
  * @since 2020-03-25
@@ -50,22 +50,38 @@ public class ProgramasRoute extends RestConfiguration {
 				  	.endParam()
 				.outType(Programa.class)
 				.responseMessage().code("000").message("300 - Redirect<br>400 - Client Error<br>500 - Server Error").responseModel(ErrorResponse.class).endResponseMessage()
-				.to("direct-vm:getProgramaEstructura")		
+				.to("direct-vm:getProgramaEstructura")	
+				
 		;
 
 		// REST & SWAGGER COMPONENTS				
 			// ROUTE PAISES
 			
 			from("direct-vm:getProgramaEstructura")
-				.to("velocity:template/programas/query_estructura.vm")
+				.choice()
+					.when(header("id").isNull())
+			            .setProperty("message", simple("{{excepcion.pidm.notfound}}"))
+			            .setHeader("CamelHttpResponseCode", simple("400"))
+						.process(new ValidateErrorProcessor())
+			        .otherwise()
+			        	.to("velocity:template/programas/query_estructura.vm")
+						.setHeader("CamelSqlQuery").simple("${body}")
+						.to("direct:bannerSQL")
+						.log("Respuesta body: ${body}")
+						.setProperty("pEstructura", simple("${body}"))
+						.to("direct:getDescripcionNivel")
+						.bean(ProgramaService.class, "getProgramaEstructura")
+				        .wireTap("mock:outputGetProgramaEstructura")
+				.end()
+			;		
+			
+			from("direct:getDescripcionNivel")
+			    .setProperty("nivelD", simple("${body[0][NIVEL]}"))
+				.to("velocity:template/programas/query_descripcion_nivel.vm")
 				.setHeader("CamelSqlQuery").simple("${body}")
-				.log("query")
 				.to("direct:bannerSQL")
-				.log("Respuesta")
-				.bean(ProgramaService.class, "getProgramaEstructura")
-				.log("final")
-		        .wireTap("mock:outputGetProgramaEstructura")
-			;			
+				.setProperty("desNivel",simple("${body[0][DNIVEL]}"))
+			;
 			
 	}
 }

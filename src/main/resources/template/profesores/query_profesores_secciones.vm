@@ -12,9 +12,12 @@ FROM
 	SSBSECT,
 	GOBTPAC 
 WHERE 
-	SIRASGN_TERM_CODE = '$headers.periodo' 
-	AND SSBSECT_TERM_CODE = '$headers.periodo' 
+	SIRASGN_TERM_CODE = '$!exchange.properties.periodo' 
+	AND SSBSECT_TERM_CODE = '$!exchange.properties.periodo' 
 	AND SIRASGN_TERM_CODE    = SSBSECT_TERM_CODE 
+	 #if($!exchange.properties.crn && $!exchange.properties.crn != '')
+ 	AND SIRASGN_CRN = '$!exchange.properties.crn'
+  	#end
 	AND SIRASGN_CRN  = SSBSECT_CRN 
 	AND SIRASGN_PIDM        = GOBTPAC_PIDM (+)
 	AND SIRASGN_PIDM  = '$!exchange.properties.PIDM'

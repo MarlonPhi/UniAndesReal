@@ -6,8 +6,8 @@ import java.util.List;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 
+import co.edu.uniandes.fuse.api.academico.models.entity.Programa;
 import co.edu.uniandes.fuse.api.academico.models.estudiante.InfoProgramasEstudiante;
-import co.edu.uniandes.fuse.api.academico.models.programa.Programa;
 
 public class ProgramasEstudianteProcessor  implements Processor {
 

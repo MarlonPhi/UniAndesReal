@@ -1,0 +1,10 @@
+SELECT DISTINCT 
+				spriden_pidm llave_estudiante,
+				spriden_id codigo,
+				gobtpac_ldap_user usr_ldap 
+FROM 
+	 GOBTPAC
+	,SPRIDEN   
+WHERE 
+	spriden_pidm = gobtpac_pidm (+)  
+	and spriden_pidm = :#spidm AND spriden_change_ind    IS NULL

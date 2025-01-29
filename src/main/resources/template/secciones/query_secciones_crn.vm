@@ -1,0 +1,6 @@
+SELECT SSBSECT_CRN 
+FROM SSBSECT 
+WHERE SSBSECT_SUBJ_CODE = '$!exchange.properties.nombreCurso' 
+ AND SUBSTR(SSBSECT_CRSE_NUMB,1,5) = '$!exchange.properties.codigoCurso'
+ AND SSBSECT_SEQ_NUMB = '$!exchange.properties.seccion'     
+ AND SSBSECT_TERM_CODE = $!exchange.properties.periodo

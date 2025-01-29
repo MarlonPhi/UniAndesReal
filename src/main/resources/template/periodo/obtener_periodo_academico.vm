@@ -1,0 +1,19 @@
+SELECT DISTINCT 
+	stvterm_end_date  fecha_fin 
+	,stvterm_start_date  fecha_inicio 
+	,substr(stvterm_code,5,2)  short_fecha
+	, stvterm_code periodo_llave 
+	,stvterm_desc desc_periodo 
+	,stvterm_acyr_code  anno_periodo 
+	,stvterm_trmt_code  tipo_periodo 
+
+FROM STVTERM  
+
+WHERE substr(stvterm_code,5,2)
+	NOT IN ('91','92','93','99','00')  
+	AND stvterm_end_date >= to_date('$!exchange.properties.SFechainicial','yyyy/mm/dd')  
+	AND stvterm_start_date <= to_date('$!exchange.properties.SFechafinal','yyyy/mm/dd')
+	
+	#if($!exchange.properties.STiposperiodo && $!exchange.properties.STiposperiodo != '')
+	AND  SUBSTR(stvterm_code,5,2) IN ($!exchange.properties.STiposperiodo)
+	#end

@@ -1,0 +1,3 @@
+select 
+	HWSKWCNL.F_PRIM_NIVEL_PROG ($!exchange.properties.spidm,'$!exchange.properties.speriodo') as nivelAcademico
+from dual

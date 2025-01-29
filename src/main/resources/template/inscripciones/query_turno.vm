@@ -1,0 +1,17 @@
+
+	SELECT DISTINCT  SFBWCTL_RGRP_CODE                                    TURNO
+	,SFBWCTL_PRIORITY                                                     PRIORIDAD_GRUPO
+	,SFRWCTL_BEGIN_DATE                                                   FECHA_INI
+	,SUBSTR(SFRWCTL_HOUR_BEGIN,1,2)||SUBSTR(SFRWCTL_HOUR_BEGIN,3,2)       HORA_INI
+	,SFRWCTL_END_DATE                                                     FECHA_FIN
+	,SUBSTR(SFRWCTL_HOUR_END,1,2)||SUBSTR(SFRWCTL_HOUR_END,3,2)           HORA_FIN
+	,SFBWCTL_PRIORITY                                                     PRIORIDAD
+	FROM SFRWCTL --HORAS
+	,SFBWCTL --GRUPOS
+	,SFBRGRP-- ESTUDIANTE
+	WHERE SFBWCTL_TERM_CODE        = '$!exchange.properties.periodo'
+	AND SFRWCTL_TERM_CODE        = '$!exchange.properties.periodo'
+	AND SFBRGRP_TERM_CODE  = '$!exchange.properties.periodo'
+	AND SFBRGRP_RGRP_CODE     = SFBWCTL_RGRP_CODE
+	AND SFRWCTL_PRIORITY         = SFBWCTL_PRIORITY
+	AND SFBRGRP_PIDM             = '$!exchange.properties.PIDM'  

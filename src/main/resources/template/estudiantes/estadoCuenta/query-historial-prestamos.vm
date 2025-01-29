@@ -1,0 +1,114 @@
+SELECT
+     catalog_key              AS id_titulo,
+     (
+         SELECT
+             replace(replace(replace(replace(replace(replace(regexp_replace(regexp_replace(regexp_replace(tag,'\|=.*',''),'\|.',' '
+             ),'\/.*',''),'än','ñ'),'âa','á'),'âe','é'),'âi','í'),'âo','ó'),'âu','ú')
+         FROM
+             sirsi.marc0
+         WHERE
+             marc0.tag_number = 245
+             AND marc0.marc = (
+                 SELECT
+                     marc
+                 FROM
+                     sirsi.catalog
+                 WHERE
+                     sirsi.catalog.catalog_key = sirsi.chargehist.catalog_key
+             )
+                 AND ROWNUM = 1
+     ) AS titulo,
+     (
+         SELECT
+             replace(replace(replace(replace(replace(replace(regexp_replace(regexp_replace(tag,'\|=.*',''),'\|.',' '),'än','ñ'),'âa'
+            ,'á'),'âe','é'),'âi','í'),'âo','ó'),'âu','ú')
+         FROM
+             sirsi.marc0
+         WHERE
+             marc0.tag_number = 100
+             AND marc0.marc = (
+                 SELECT
+                     marc
+                 FROM
+                     sirsi.catalog
+                 WHERE
+                     sirsi.catalog.catalog_key = sirsi.chargehist.catalog_key
+             )
+                 AND ROWNUM = 1
+     ) AS autor,
+     (
+         SELECT
+             item_number
+         FROM
+             sirsi.callnum
+         WHERE
+             sirsi.callnum.catalog_key = sirsi.chargehist.catalog_key
+             AND sirsi.callnum.call_sequence = sirsi.chargehist.call_sequence
+     ) AS n_topografico,
+     (
+         SELECT
+             id
+         FROM
+             sirsi.item
+         WHERE
+             sirsi.item.catalog_key = sirsi.chargehist.catalog_key
+             AND sirsi.item.call_sequence = sirsi.chargehist.call_sequence
+                 AND sirsi.item.copy_number = sirsi.chargehist.copy_number
+     ) AS codigo_barras_item,
+     (
+         SELECT
+             id
+         FROM
+             sirsi.users
+         WHERE
+             sirsi.users.user_key = sirsi.chargehist.user_key
+     ) AS id_usuario,
+     (
+         SELECT
+             policy_name
+         FROM
+             sirsi.policy
+         WHERE
+             sirsi.policy.policy_type = 'LIBR'
+             AND sirsi.policy.policy_number = sirsi.chargehist.library
+     ) AS prestado_en,
+     TO_CHAR(date_time_charged,'DD/MM/YYYY hh24:mi:ss') AS prestado_el,
+     TO_CHAR(date_time_due,'DD/MM/YYYY hh24:mi:ss') AS vence_el,
+     regexp_replace(TO_CHAR(date_time_renewed,'DD/MM/YYYY hh24:mi:ss'),'01\/01\/1900 00:.*','') AS renovado_el,
+     num_of_unseen_renewals   AS renovaciones_online,
+     regexp_replace(TO_CHAR(date_time_discharged,'DD/MM/YYYY hh24:mi:ss'),'01\/01\/1900 00:.*','') AS devuelto_el,
+     accrued_fine             AS sancion_mostrarenformatomoneda,
+     (
+         SELECT
+             policy_name
+         FROM
+             sirsi.policy
+         WHERE
+             sirsi.policy.policy_type = 'LIBR'
+             AND sirsi.policy.policy_number = sirsi.chargehist.discharge_library
+     ) AS devuelto_en
+ FROM
+     sirsi.chargehist
+ WHERE
+ 
+	  	     date_time_charged >= (SYSDATE -730)  
+ 
+ 
+     AND ( user_key IN (
+         SELECT
+             user_key
+         FROM
+             sirsi.users
+         WHERE
+             address_offset_1 IN (
+                 SELECT
+                     offset
+                 FROM
+                     sirsi.userxinfo
+                 WHERE
+                     entry_number = '9007'
+                     AND TRIM(lower(entry) ) LIKE lower('$!exchange.properties.slogin%@uniandes.edu.co')
+             )
+     ) )
+ ORDER BY
+     date_time_charged DESC

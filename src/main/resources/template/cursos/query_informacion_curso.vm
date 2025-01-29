@@ -1,0 +1,49 @@
+SELECT DISTINCT SSBSECT_TERM_CODE       PERIODO
+          ,SSBSECT_CRN         CRN
+     ,NVL(SSBSECT_CRSE_TITLE,SCBCRSE_TITLE)  NOMBRE_CURSO
+     ,C.STVCOLL_CODE             FAC_COD
+               , C.STVCOLL_DESC            FACULTAD
+               ,SCBCRSE_DEPT_CODE           DEPARTAMENTO
+               ,STVDEPT_DESC                   DESC_DEPTO
+      ,STVSUBJ_CODE            MATERIA
+               ,SSBSECT_CRSE_NUMB                                           COD_CURSO
+               ,G.STVSUBJ_DESC             DESCRIPCION_MATERIA
+      FROM SSBSECT
+    ,SCBCRSE
+     ,STVCOLL C
+     ,STVSUBJ G
+  ,STVDEPT
+     WHERE
+  	
+     SCBCRSE_SUBJ_CODE = SSBSECT_SUBJ_CODE
+    AND SCBCRSE_CRSE_NUMB = SSBSECT_CRSE_NUMB
+    AND SCBCRSE_COLL_CODE    = C.STVCOLL_CODE
+    AND SCBCRSE_SUBJ_CODE    = G.STVSUBJ_CODE
+       AND SCBCRSE_DEPT_CODE    = STVDEPT_CODE
+      #if($!exchange.properties.scodigodpto && $!exchange.properties.scodigodpto != '')
+     AND SCBCRSE_DEPT_CODE    = '$!exchange.properties.scodigodpto'
+    	#end
+    	 #if($!exchange.properties.sfacultad && $!exchange.properties.sfacultad != '')
+      AND C.STVCOLL_CODE       = '$!exchange.properties.sfacultad'
+        	#end
+      #if($!exchange.properties.scrn && $!exchange.properties.scrn != '')
+       AND SSBSECT_CRN   = '$!exchange.properties.scrn'
+       	#end
+       AND SSBSECT_TERM_CODE = '$!exchange.properties.speriodo'
+         #if($!exchange.properties.snombrecurso && $!exchange.properties.snombrecurso != '')
+      AND STVSUBJ_CODE         = '$!exchange.properties.snombrecurso'
+          	#end
+          	 #if($!exchange.properties.scodigocurso && $!property.scodigocurso != '')
+     AND SSBSECT_CRSE_NUMB    = '$!exchange.properties.scodigocurso'
+     	#end
+     AND SCBCRSE_EFF_TERM  =
+        (SELECT MAX(CR2.SCBCRSE_EFF_TERM)
+        FROM SCBCRSE CR2
+    WHERE CR2.SCBCRSE_EFF_TERM <= '$!exchange.properties.speriodo'
+      AND CR2.SCBCRSE_SUBJ_CODE = SSBSECT_SUBJ_CODE
+            AND CR2.SCBCRSE_CRSE_NUMB = SSBSECT_CRSE_NUMB)
+                ##Paginación
+             ##AND ROWNUM <= 10  
+			 
+			 
+			 https://dev.azure.com/cedexdevsoftware/i11%20-%20Bloque%20Ne%C3%B3n/_wiki/wikis/Bloque-Ne%C3%B3n.wiki/1372/3.-Integraci%C3%B3n-de-servicios-API-REST

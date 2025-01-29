@@ -1,0 +1,22 @@
+SELECT DISTINCT SFRSTCR_TERM_CODE    SEMESTRE
+	 ,SFBETRM_PIDM       LLAVE_ESTUDIANTE
+	    ,SFRSTCR_CRN       CRN
+	    ,SSBSECT.SSBSECT_SUBJ_CODE     MATERIA
+	    ,SSBSECT.SSBSECT_CRSE_NUMB     CODIGO
+	    ,SSBSECT.SSBSECT_SEQ_NUMB      SECCION
+	 ,SFRSTCR_CREDIT_HR       CREDS
+	  ,SFRSTCR_LEVL_CODE       NIVEL_INSCRIPCION_MATERIA
+	 ,SFRSTCR_GRDE_CODE_MID         NOTA_PARCIAL
+	 ,SFRSTCR_RSTS_CODE      TIPO_REGISTRO
+	 ,SFBETRM_ESTS_CODE             ESTADO_INSCRIPCION
+	 ,SFRSTCR_ACTIVITY_DATE     FECHA_ACTIVIDAD
+	FROM SFRSTCR, SSBSECT, SFBETRM
+	WHERE SFRSTCR_CRN    = SSBSECT_CRN
+	AND SFRSTCR_PIDM    = SFBETRM_PIDM
+		AND   SSBSECT_TERM_CODE = '$!exchange.properties.periodo'
+		AND   SFRSTCR_TERM_CODE = '$!exchange.properties.periodo' 
+		AND   SFBETRM_TERM_CODE = '$!exchange.properties.periodo' 
+		AND   SFRSTCR_PIDM = '$!exchange.properties.PIDM' 
+#if($!exchange.properties.tinsc !='')
+		AND  sfrstcr_rsts_code IN ($!exchange.properties.tipoInscripcion) 
+#end

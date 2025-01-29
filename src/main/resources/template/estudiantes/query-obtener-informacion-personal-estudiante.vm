@@ -1,0 +1,14 @@
+SELECT DISTINCT spriden_pidm   llave_estudiante
+	      ,spriden_id              codigo
+		  ,gobtpac_ldap_user       usr_ldap
+      FROM GOBTPAC
+	      ,SPRIDEN
+     WHERE spriden_pidm = gobtpac_pidm (+)
+	   AND spriden_change_ind    IS NULL
+	   AND spriden_entity_ind   = 'P'
+	   AND  EXISTS (SELECT 'X'
+                     FROM sorlcur
+				    WHERE sorlcur_pidm          =spriden_pidm
+					  AND sorlcur_term_code   <='$!exchange.properties.Speriodo'
+			      )
+      AND spriden_pidm =  '$!exchange.properties.spidm'

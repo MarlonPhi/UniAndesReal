@@ -1,0 +1,47 @@
+SELECT
+     COUNT(*) AS total_perfiles_validos
+ FROM
+     (
+         SELECT
+             vence,
+             (
+                 SELECT
+                     estado
+                 FROM
+                     deposito.perfiles_symphony
+                 WHERE
+                     deposito.perfiles_symphony.id_perfil = perfils
+             ) AS estado,
+             (
+                 SELECT
+                     upper(ezproxy)
+                 FROM
+                     deposito.perfiles_symphony
+                 WHERE
+                     deposito.perfiles_symphony.id_perfil = perfils
+             ) AS ezproxy
+         FROM
+             (
+                 SELECT
+                     profile   AS perfils,
+                     id        AS idu,
+                     TO_CHAR(date_privilege_expires,'YYYYMMDD') AS vence
+                 FROM
+                     sirsi.users
+                 WHERE
+                     sirsi.users.address_offset_1 IN (
+                         SELECT
+                             offset   AS offsetdir1
+                         FROM
+                             sirsi.userxinfo
+                         WHERE
+                             entry_number = 9007
+                             AND lower(entry) = lower('$!exchange.properties.username@uniandes.edu.co')
+                     )
+             )
+     )
+ WHERE
+     estado = 'S'
+     AND ezproxy = '$!exchange.properties.cliente'
+     AND ( vence >= TO_CHAR(SYSDATE,'YYYYMMDD')
+           OR vence = '19000101' )

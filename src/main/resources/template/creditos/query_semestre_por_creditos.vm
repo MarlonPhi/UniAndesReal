@@ -1,0 +1,8 @@
+SELECT SWTSSCD_SEM1 sem1,SWTSSCD_SEM2 sem2,SWTSSCD_SEM3 sem3,SWTSSCD_SEM4 sem4,
+SWTSSCD_SEM5 sem5,SWTSSCD_SEM6 sem6,SWTSSCD_SEM7 sem7,SWTSSCD_SEM8 sem8,
+SWTSSCD_SEM9 sem9,SWTSSCD_SEM10 sem10 
+
+FROM SWTSSCD 
+WHERE SWTSSCD_PROG = '$!exchange.properties.codigoPrograma'
+	AND SWTSSCD_ID_INI <= $!exchange.properties.CodeStudent 
+	AND SWTSSCD_ID_FIN >= $!exchange.properties.CodeStudent

@@ -1,0 +1,40 @@
+select usu.id id
+  ,usu.group_id documento
+  ,upper(replace(replace(replace(replace(replace(replace(lower(usu.name),'Ã¢a', 'Ã¡'),'Ã¤n', 'Ã±'),'Ã¢e', 'Ã©'),'Ã¢i', 'Ã'),'Ã¢o', 'Ã³'),'Ã¢u', 'Ãº')) nombre
+  ,po.policy_name biblioteca
+  ,it.id id_item
+  ,ch.date_time_charged fec_prestamo
+  ,ch.date_time_due fec_devolucion
+  ,replace(replace(replace(replace(replace(replace(substr(ma2.tag,1,instr(ma2.tag, '|')-1),'Ã¢a', 'Ã¡'),'Ã¢e', 'Ã©'),'Ã¢i', 'Ã'),'Ã¢o', 'Ã³'),'Ã¢u', 'Ãº'),'Ã¤n', 'Ã±') autor
+  ,replace(replace(replace(replace(replace(replace(replace(replace(ma3.tag,'|b',' '),'|c',' '),'Ã¢a', 'Ã¡'),'Ã¢e', 'Ã©'),'Ã¢i', 'Ã'),'Ã¢o', 'Ã³'),'Ã¢u', 'Ãº'),'Ã¤n', 'Ã±') titulo
+  ,replace(replace(replace(replace(replace(replace(replace(substr(ma5.tag,1,instr(ma5.tag, '^')-3),'Ã¢a', 'Ã¡'),'Ã¢e', 'Ã©'),'Ã¢i', 'Ã'),'Ã¢o', 'Ã³'),'Ã¢u', 'Ãº'),'Ã¤n', 'Ã±'),'|x',' ') materia
+from charge ch 
+  ,users usu
+  ,item it 
+  ,policy po
+  ,catalog ct
+  ,marc0 ma2
+  ,marc0 ma3
+  ,marc0 ma5
+where ch.user_key = usu.user_key
+	and ch.catalog_key = it.catalog_key
+	and ch.call_sequence = it.call_sequence
+	and ch.copy_number = it.copy_number
+	and po.policy_type = 'LIBR'
+	and ch.library = po.policy_number
+	and it.catalog_key = ct.catalog_key
+	and ct.marc = ma2.marc (+)
+	and ma2.tag_number (+)= 100 -- Autor
+	and ct.marc = ma3.marc (+)
+	and ma3.tag_number (+)= 245 -- Titulo
+	and ct.marc = ma5.marc (+) 
+	and ma5.tag_number (+)= 650 --650 materia general pueden ser varias.
+	#if($!exchange.properties.documento != '')
+		and usu.group_id = '$!exchange.properties.documento'
+	#end 
+	and trunc(ch.date_time_charged) between to_date('$!exchange.properties.dfechaprestamo', 'MM/DD/YYYY') AND to_date('$!exchange.properties.dfechadevolucion', 'MM/DD/YYYY')
+	and trunc(ch.date_time_due) between to_date('$!exchange.properties.dfechaprestamo', 'MM/DD/YYYY') AND to_date('$!exchange.properties.dfechadevolucion', 'MM/DD/YYYY')
+
+order by usu.id, ch.date_time_charged
+
+

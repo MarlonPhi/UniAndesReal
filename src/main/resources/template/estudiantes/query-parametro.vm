@@ -1,0 +1,8 @@
+SELECT
+    "question"
+FROM FUSEPARAMETERBN
+WHERE
+    "questiontype" like '$!exchange.properties.questtype' 
+AND "answerout" like '$!exchange.properties.answerout'
+AND "tablename" like '$!exchange.properties.tablename'
+AND "codein" like '$!exchange.properties.codein'

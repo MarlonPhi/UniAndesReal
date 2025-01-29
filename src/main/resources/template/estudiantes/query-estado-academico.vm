@@ -1,0 +1,18 @@
+SELECT DISTINCT 
+	   shrtgpa_term_code                    semestre
+      ,shrttrm_pidm                         llave_estudiante
+      ,shrtgpa_levl_code                    nivel_ha
+      ,shrttrm_astd_code_end_of_term        codigo_estado_academico
+      ,stvastd_desc                         desc_estado_acadmico
+      ,shrttrm_cast_code                    codigo_estado_academico_doble
+  FROM 
+		SHRTTRM
+	   ,STVASTD 
+  	   ,SHRTGPA
+WHERE 
+	   shrtgpa_term_code  = '$!exchange.properties.Speriodo' 
+   AND shrtgpa_gpa_type_ind  = 'I'
+   AND shrtgpa_pidm    = shrttrm_pidm
+   AND shrttrm_term_code  = '$!exchange.properties.Speriodo'      
+   AND shrttrm_pidm = '$!exchange.properties.spidm'   
+   AND shrttrm_astd_code_end_of_term = stvastd_code

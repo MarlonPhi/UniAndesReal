@@ -1,0 +1,10 @@
+SELECT COALESCE(SUM(SHRTGPA_HOURS_PASSED),0)        HOURS_PASSED
+ FROM SHRTGPA
+ WHERE SHRTGPA_GPA_TYPE_IND = 'T' 
+	 #if($!exchange.properties.periodo && $!exchange.properties.periodo != '')
+		AND   SHRTGPA_TERM_CODE <= '$!exchange.properties.periodo'
+	  #end  
+	  #if($!exchange.properties.nivel && $!exchange.properties.nivel != '')
+		AND   SHRTGPA_LEVL_CODE  = '$!exchange.properties.nivel' 
+	  #end        		  
+		AND   shrtgpa_pidm = '$!exchange.properties.PIDM' 

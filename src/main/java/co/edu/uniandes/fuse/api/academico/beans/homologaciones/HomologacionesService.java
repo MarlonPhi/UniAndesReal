@@ -7,26 +7,21 @@ import java.util.List;
 import org.apache.camel.Exchange;
 
 import co.edu.uniandes.fuse.api.academico.models.programa.ProgramaHomologaciones;
+import co.edu.uniandes.fuse.api.academico.modelss.ResponseCode;
 import co.edu.uniandes.fuse.core.utils.beans.DataTypes;
 
 
 public class HomologacionesService {
 
+	ResponseCode rCode = new ResponseCode();
 	
 	public void getProgramasH(Exchange exchange) throws Exception{
-		
-		String nombrePrograma = exchange.getIn().getHeader("programName", String.class);
-		
-		ArrayList<Map> result = exchange.getIn().getBody(ArrayList.class);
-		
+
+		List<Map<String, Object>> result = exchange.getIn().getBody(ArrayList.class);
 		List<ProgramaHomologaciones> programaH = new ArrayList<>();
 		
-		if(!result.isEmpty()) {
-			
-			for (int i = 0; i < result.size(); i++) {
-				
-				Map<String, Object> row = result.get(i);
-				
+		if(!result.isEmpty() && result != null) {
+			for (Map<String, Object> row: result) {
 				ProgramaHomologaciones listaPrograma = new ProgramaHomologaciones();
 				
 				listaPrograma.setFacultyCode(DataTypes.getColumnString(row.get("FAC")));
@@ -41,10 +36,10 @@ public class HomologacionesService {
 			}
 			exchange.getIn().setBody(programaH);
 		}else {
-			exchange.setProperty("HttpErrorProperty", "http.code.not.found");
-			exchange.setProperty("InternalErrorProperty", "internal.code.resource.not.found");
-			throw new Exception("Recurso no encontrado");
-			}
-		
+			exchange.getIn().setHeader(Exchange.HTTP_RESPONSE_CODE, "204");
+			rCode.setStatus(false);
+			rCode.setMessage("El recurso no devuelve contenido.");
+			exchange.getIn().setBody(rCode);
+		}
 	}
 }

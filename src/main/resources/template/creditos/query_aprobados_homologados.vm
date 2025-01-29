@@ -1,0 +1,8 @@
+SELECT COALESCE(SUM(SHRTRCE_CREDIT_HOURS),0) C_A_HOMOLOGADOS
+FROM SHRTRCE
+WHERE SHRTRCE_PIDM          = '$!exchange.properties.PIDM'
+	AND SHRTRCE_TERM_CODE_EFF   <= '$!exchange.properties.periodo'
+	AND SHRTRCE_GMOD_CODE       IN ('A','N')
+	AND SHRTRCE_LEVL_CODE       = '$!exchange.properties.nivel'
+	AND (SHRTRCE_GRDE_CODE      = 'A'
+	OR SHRTRCE_GRDE_CODE        >= '3.0')

@@ -1,0 +1,10 @@
+SELECT DISTINCT sprhold_pidm llave_estudiante 
+	,sprhold_hldd_code  tipo_suspencion 
+	,sprhold_from_date  fecha_inicio 
+	,sprhold_to_date   fecha_fin 
+	,stvhldd_desc   descripcion_suspencion 
+	,sprhold_reason razon 
+FROM SPRHOLD, stvhldd
+WHERE sprhold_hldd_code IN ('01','02','04','17')
+	AND sprhold_hldd_code = stvhldd_code(+)
+	AND sprhold_pidm ='$!exchange.properties.spidm'

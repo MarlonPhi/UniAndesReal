@@ -1,0 +1,20 @@
+SELECT DISTINCT SSBSECT_TERM_CODE       PERIODO
+           ,SSBSECT_CRN         CRN
+           ,NVL(SSBSECT_CRSE_TITLE,SCBCRSE_TITLE)  MATERIA
+            FROM SSBSECT,SCBCRSE
+            WHERE SSBSECT_TERM_CODE = '$!property.SPeriodo'
+			#if($!property.Scrn && $!property.Scrn != '')
+				AND SSBSECT_CRN = '$!property.Scrn'
+			#end       	
+            AND SCBCRSE_SUBJ_CODE = SSBSECT_SUBJ_CODE
+            AND SCBCRSE_CRSE_NUMB = SSBSECT_CRSE_NUMB
+	        AND SCBCRSE_EFF_TERM  = 
+            (SELECT MAX(CR2.SCBCRSE_EFF_TERM)
+            FROM SCBCRSE CR2
+            WHERE CR2.SCBCRSE_EFF_TERM <= '$!property.SPeriodo' 
+            AND CR2.SCBCRSE_SUBJ_CODE = SSBSECT_SUBJ_CODE
+            AND CR2.SCBCRSE_CRSE_NUMB = SSBSECT_CRSE_NUMB )
+            
+            ##Paginación
+            ##AND ROWNUM <= 10
+            

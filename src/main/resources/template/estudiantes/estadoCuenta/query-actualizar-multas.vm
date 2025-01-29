@@ -1,0 +1,12 @@
+ua_sire_multas_prog.carga_pago_bib_nube
+
+SELECT
+
+	INHOUSE.UA_SIRE_MULTAS_PROG.CARGA_PAGO_BIB_NUBE (
+	25,
+	177431,
+	1,
+	90000,
+	1) AS codigo 
+	
+FROM dual

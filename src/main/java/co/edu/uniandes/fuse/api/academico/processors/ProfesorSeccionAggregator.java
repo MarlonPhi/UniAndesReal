@@ -2,18 +2,22 @@ package co.edu.uniandes.fuse.api.academico.processors;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.processor.aggregate.AggregationStrategy;
+import org.apache.log4j.Logger;
 
 import co.edu.uniandes.fuse.api.academico.models.profesor.ProfesorSecciones;
 import co.edu.uniandes.fuse.api.academico.models.seccion.Seccion;
 
 public class ProfesorSeccionAggregator implements AggregationStrategy {
 
+	private final static Logger log = Logger.getLogger("");
 	@Override
 	public Exchange aggregate(Exchange original, Exchange resource) {
 		// TODO Auto-generated method stub
 		
 		ProfesorSecciones profesorSeccion= original.getIn().getBody(ProfesorSecciones.class);
 		Seccion seccion= resource.getIn().getBody(Seccion.class);
+		
+		log.info("verificando info dentro -->"+seccion.getNombreCorto());
 		
 		profesorSeccion.setNombreCurso(seccion.getNombreCorto());
 		profesorSeccion.setNombreCursoLargo(seccion.getNombreLargo());
