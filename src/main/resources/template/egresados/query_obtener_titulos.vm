@@ -1,0 +1,19 @@
+SELECT SHRDGMR_PIDM  	PIDM,
+ SHRDGMR_DEGC_CODE  	NOMBRE_TITULO,
+ SHRDGMR_GRAD_DATE      FECHA_OBTENCION,
+ shrdgmr_levl_code      NIVEL,
+ shrdgmr_term_code_grad      PERIODO
+  FROM SHRDGMR 
+  WHERE SHRDGMR_DEGS_CODE = 'OT' 
+  #if($!exchange.properties.PIDM && $!exchange.properties.PIDM != '')
+	AND   SHRDGMR.SHRDGMR_PIDM = '$!exchange.properties.PIDM'  
+  #end 	
+  #if($headers.periodo && $headers.periodo != '')
+	AND   shrdgmr_term_code_grad = '$headers.periodo' 
+  #end  
+  #if($headers.nivel && $headers.nivel != '')
+	AND   shrdgmr_levl_code  = '$headers.nivel' 
+  #end  
+  #if($headers.programa && $headers.programa != '')
+	AND   SHRDGMR_DEGC_CODE   = '$headers.programa' 
+  #end  

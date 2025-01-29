@@ -1,0 +1,3 @@
+select 
+ INHOUSE.UUZKHOMO.fw_get_info_estudiante('$!exchange.properties.PIDM', '$!exchange.properties.parametro') as DATO 
+from dual

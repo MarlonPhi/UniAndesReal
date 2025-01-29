@@ -1,0 +1,31 @@
+SELECT 
+DISTINCT a.scbcrse_subj_code codigo,
+	a.scbcrse_crse_numb numero,
+	a.scbcrse_subj_code || a.scbcrse_crse_numb curso,
+	a.scbcrse_title nombre,
+	a.scbcrse_credit_hr_low creditos,
+	a.scbcrse_divs_code nivel,
+	a.scbcrse_coll_code facultad,
+	a.scbcrse_dept_code departamento
+FROM scbcrse a
+
+WHERE a.scbcrse_csta_code IN ('A', 'T')
+	AND a.scbcrse_eff_term =
+	(SELECT MAX (b.scbcrse_eff_term)
+	
+	FROM scbcrse b
+	WHERE a.scbcrse_subj_code = b.scbcrse_subj_code
+	
+	AND a.scbcrse_crse_numb = b.scbcrse_crse_numb)
+	 
+	  #if($headers.codigo && $headers.codigo != '')
+		AND upper(a.scbcrse_subj_code) LIKE upper('%$headers.codigo%')
+	  #end
+	      
+	  #if($headers.curso && $headers.curso != '')
+	  AND upper(a.scbcrse_subj_code || a.scbcrse_crse_numb) LIKE upper('%$headers.curso%')
+	  #end
+	  
+	  #if($headers.nombre && $headers.nombre != '')
+		AND upper(a.scbcrse_title) LIKE upper('%$headers.nombre%') 
+	  #end  

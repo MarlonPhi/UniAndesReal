@@ -1,0 +1,69 @@
+SELECT DISTINCT '$headers.periodo' periodo_acad
+                ,p1.sorlcur_pidm llave_est
+                ,p1.sorlcur_priority_no  prioridad_1
+                ,p1.sorlcur_program cod_programa_1
+                ,tt_prg2.priority_no_2 prioridad_2
+                ,tt_prg2.program cod_programa_2
+                ,p1.sorlcur_admt_code tipo_adm1 ,tt_prg2.tipo_adm2 tipo_adm2 
+                FROM SORLCUR p1
+    			,SORLFOS
+     			,(SELECT DISTINCT p2.sorlcur_pidm pidm
+                ,p2.sorlcur_levl_code levl_code
+                ,p2.sorlcur_program program
+      			,p2.sorlcur_priority_no priority_no_2
+      			,p2.sorlcur_admt_code tipo_adm2
+              	FROM SORLCUR P2
+                ,SORLFOS
+             	WHERE p2.sorlcur_term_code = (SELECT MAX(l2.sorlcur_term_code)
+                FROM SORLCUR l2
+                WHERE l2.sorlcur_pidm = p2.sorlcur_pidm
+                AND l2.sorlcur_priority_no = 2
+                AND l2.sorlcur_lmod_code= 'LEARNER'
+	#if($headers.periodo && $headers.periodo != '')
+        		AND l2.sorlcur_term_code   <= '$headers.periodo'
+	#end        		
+        		)
+                AND p2.sorlcur_seqno = (SELECT MAX(l2.sorlcur_seqno)
+                FROM SORLCUR l2
+                WHERE l2.sorlcur_pidm = p2.sorlcur_pidm
+                AND l2.sorlcur_priority_no = 2
+                AND l2.sorlcur_lmod_code = 'LEARNER'
+                AND l2.sorlcur_term_code = p2.sorlcur_term_code)
+               AND p2.sorlcur_priority_no = 2
+               AND p2.sorlcur_lmod_code = 'LEARNER'
+               AND p2.sorlcur_cact_code = 'ACTIVE'
+               AND p2.sorlcur_pidm = sorlfos_pidm
+               AND p2.sorlcur_seqno = sorlfos_lcur_seqno
+               AND sorlfos_priority_no = 1
+               AND sorlfos_cact_code  = 'ACTIVE'
+               AND sorlfos_csts_code  = 'INPROGRESS'
+               AND sorlfos_lfst_code  = 'MAJOR' ) tt_prg2
+         	   WHERE p1.sorlcur_term_code = (SELECT MAX (l1.sorlcur_term_code)
+               FROM sorlcur l1
+               WHERE l1.sorlcur_pidm = p1.sorlcur_pidm
+               AND l1.sorlcur_priority_no = 1
+               AND l1.sorlcur_lmod_code = 'LEARNER'
+               AND l1.sorlcur_cact_code = 'ACTIVE'
+     #if($headers.periodo && $headers.periodo != '')
+               AND l1.sorlcur_term_code <= '$headers.periodo'
+     #end
+               )
+               AND p1.sorlcur_seqno =
+               (SELECT MAX (l1.sorlcur_seqno)
+               FROM sorlcur l1
+               WHERE l1.sorlcur_pidm = p1.sorlcur_pidm
+               AND l1.sorlcur_priority_no = 1
+               AND l1.sorlcur_lmod_code = 'LEARNER'
+               AND l1.sorlcur_cact_code = 'ACTIVE'
+               AND l1.sorlcur_term_code = p1.sorlcur_term_code)
+            AND p1.sorlcur_priority_no = 1
+            AND p1.sorlcur_lmod_code = 'LEARNER'
+            AND p1.sorlcur_cact_code = 'ACTIVE'
+            AND p1.sorlcur_pidm = sorlfos_pidm
+            AND p1.sorlcur_seqno = sorlfos_lcur_seqno
+            AND sorlfos_priority_no = 1
+            AND sorlfos_cact_code = 'ACTIVE'
+            AND sorlfos_csts_code = 'INPROGRESS'
+            AND sorlfos_lfst_code = 'MAJOR'
+   			AND p1.sorlcur_pidm   = tt_prg2.pidm (+)
+            AND p1.sorlcur_pidm = '$!exchange.properties.PIDM'

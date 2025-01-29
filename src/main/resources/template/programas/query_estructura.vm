@@ -1,0 +1,43 @@
+  SELECT  DISTINCT
+        stvcoll_code fac,
+        stvcoll_desc facultad,
+        sorcmjr.sorcmjr_dept_code dpto,
+        stvdept.stvdept_desc departamento,
+        smrprle_program prog,
+        nvl(swtprnl_program_desc,smrprle_program_desc) programa,
+        smrprle_levl_code_stu   nivel
+FROM     smrprle,
+        swtprnl,
+        stvcoll,
+        sobcurr,
+        sorcmjr,
+        stvdept
+WHERE   sorcmjr_term_code_eff =
+                             (SELECT   MAX (mjr2.sorcmjr_term_code_eff)
+                                FROM   sorcmjr mjr2
+                               WHERE   mjr2.sorcmjr_curr_rule = sobcurr_curr_rule)
+AND sorcmjr_curr_rule = sobcurr_curr_rule             
+AND sobcurr.sobcurr_program = smrprle.smrprle_program
+AND smrprle_coll_code = sobcurr_coll_code
+AND smrprle_levl_code = sobcurr_levl_code
+AND sorcmjr.sorcmjr_dept_code = stvdept.stvdept_code
+AND smrprle_coll_code = stvcoll_code
+AND swtprnl_program (+) = smrprle_program
+
+#if($headers.facultad && $headers.facultad != '')
+    AND stvcoll_code = '$headers.facultad'
+#end
+                    
+#if($headers.id && $headers.id != '')           
+  AND smrprle_program = '$headers.id'
+ #end
+ 
+#if($headers.departamento && $headers.departamento != '' )
+  AND sorcmjr.sorcmjr_dept_code = '$headers.departamento' 
+  #end
+ 
+#if($headers.nivel && $headers.nivel != '' )
+  AND smrprle_levl_code_stu = '$headers.nivel' 
+#end
+ AND sobcurr.sobcurr_curr_rule = sorcmjr.sorcmjr_curr_rule 
+ORDER BY   stvcoll_desc, smrprle_program_desc

@@ -1,0 +1,57 @@
+/* Formatted on 1/07/2020 8:21:05 a. m. (QP5 v5.318) */
+SELECT                                                              /* rule */
+       DISTINCT
+       spriden_id
+           codigo,
+       GOBTPAC_LDAP_USER || '@uniandes.edu.co'
+           Correo,         
+       RTRIM (spriden_first_name)|| ' ' ||RTRIM (spriden_mi)
+           NOMBRES,  
+       spriden_last_name
+           APELLIDOS,   
+       RTRIM (spriden_first_name)
+           NOMBRE1,
+       RTRIM (spriden_mi)
+           NOMBRE2,
+       NVL (
+           SUBSTR (TRIM (spriden_last_name),
+                   1,
+                   INSTR (TRIM (spriden_last_name), ' ')),
+           SUBSTR (TRIM (spriden_last_name),
+                   INSTR (TRIM (spriden_last_name), ' ') + 1,
+                   LENGTH (TRIM (spriden_last_name))))
+           APELLIDO1,
+       DECODE (
+           SUBSTR (TRIM (spriden_last_name),
+                   INSTR (TRIM (spriden_last_name), ' ') + 1,
+                   LENGTH (TRIM (spriden_last_name))),
+           '', '',
+           SUBSTR (TRIM (spriden_last_name),
+                   INSTR (TRIM (spriden_last_name), ' ') + 1,
+                   LENGTH (TRIM (spriden_last_name))))
+           APELLIDO2,
+       sfrstcr_term_code
+           periodo,
+       SFRSTCR_LEVL_CODE
+           nivel,
+       ssbsect_crn
+           cod_curso,
+       ssbsect_term_code,
+       ssbsect_subj_code,
+       ssbsect_crse_numb,
+       ssbsect_seq_numb
+FROM spriden,
+       ssbsect,
+       sfrstcr,
+       gobtpac
+WHERE     
+spriden_pidm = sfrstcr_pidm
+       AND sfrstcr_crn = ssbsect_crn
+       AND GOBTPAC_pidm = spriden_pidm
+       AND sfrstcr_term_code = ssbsect_term_code
+       AND spriden_change_ind IS NULL
+       AND ssbsect_term_code =  '${headers.periodo}'
+       AND sfrstcr_crn =   '${headers.crn}'
+       AND sfrstcr_rsts_code IN
+               (SELECT stvrsts_code
+                  FROM TABLE (guwkcmns.fw_get_status_inscrito))

@@ -1,0 +1,44 @@
+SELECT
+    ssbsect_term_code         periodo,
+    ssbsect_crn               crn,
+    scbcrse_title             nombre_corto,
+    t_scrsyln.nom_cur_largo   nombre_largo,
+    ssbsect_subj_code         materia,
+    ssbsect_crse_numb         numero,
+    ssbsect_seq_numb          seccion
+FROM
+    ssbsect,
+    scbcrse,
+    (
+        SELECT
+            a.scrsyln_long_course_title nom_cur_largo,
+            a.scrsyln_subj_code || a.scrsyln_crse_numb code
+        FROM
+            scrsyln a
+        WHERE
+            a.scrsyln_term_code_eff = (
+                SELECT
+                    MAX(b.scrsyln_term_code_eff)
+                FROM
+                    scrsyln b
+                WHERE
+                    b.scrsyln_subj_code = a.scrsyln_subj_code
+                    AND b.scrsyln_crse_numb = a.scrsyln_crse_numb
+            )
+    ) t_scrsyln
+WHERE
+    ssbsect_term_code = '$headers.periodo' 
+    AND scbcrse_subj_code = ssbsect_subj_code
+    AND scbcrse_crse_numb = ssbsect_crse_numb
+    AND scbcrse_subj_code || scbcrse_crse_numb = t_scrsyln.code (+)
+    AND ssbsect_crn = '$headers.crn' 
+    AND scbcrse_eff_term = (
+        SELECT
+            MAX(cr2.scbcrse_eff_term)
+        FROM
+            scbcrse cr2
+        WHERE
+            cr2.scbcrse_eff_term <= '$headers.periodo' 
+            AND cr2.scbcrse_subj_code = ssbsect_subj_code
+            AND cr2.scbcrse_crse_numb = ssbsect_crse_numb
+    )

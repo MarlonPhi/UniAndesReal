@@ -1,0 +1,14 @@
+select
+       INHOUSE.UUZKHOMO.FW_SET_TRANSFERIR_CREDITOS (
+		 '${body.tipoHomologacion}',
+		 '${body.pidm}',
+		 '${body.codigoUniversidad}',
+		 '${body.prefijoCurso}',
+		 '${body.numeroCurso}',
+		 '${body.nivel}',
+		 '${body.programa}',
+		 '${body.grado}',
+		 '${body.periodoAsistencia}',
+		 '${body.examen}',
+		 '${body.idioma}') AS codigo 
+from dual
